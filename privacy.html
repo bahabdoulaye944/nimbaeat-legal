@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de Confidentialité — Nimba Eat</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #FF6B2C;
+    --orange-light: #FF8F5E;
+    --dark: #0C1018;
+    --surface: #F6F4F1;
+    --text: #17172E;
+    --muted: #575571;
+    --light: #9896B2;
+    --border: #ECEAE5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--surface);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  header {
+    background: var(--dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+    background: linear-gradient(135deg, var(--orange), var(--orange-light));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .logo-text {
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: white;
+    letter-spacing: -0.3px;
+  }
+
+  .header-badge {
+    font-family: 'Sora', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .hero {
+    background: var(--dark);
+    padding: 48px 24px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(255,107,44,0.15), transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,107,44,0.15);
+    border: 1px solid rgba(255,107,44,0.25);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-family: 'Sora', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--orange-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .hero h1 span { color: var(--orange); }
+
+  .hero-meta {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+
+  .hero-divider {
+    width: 40px;
+    height: 3px;
+    background: var(--orange);
+    border-radius: 2px;
+    margin-top: 20px;
+  }
+
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .toc {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 12px rgba(23,23,46,0.06);
+  }
+
+  .toc-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--light);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .toc ol {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  @media (max-width: 500px) {
+    .toc ol { grid-template-columns: 1fr; }
+  }
+
+  .toc ol li a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+
+  .toc ol li a:hover { color: var(--orange); }
+
+  .toc ol li a::before {
+    content: attr(data-num);
+    width: 20px;
+    height: 20px;
+    background: var(--surface);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--orange);
+    flex-shrink: 0;
+  }
+
+  .section {
+    margin-bottom: 40px;
+    scroll-margin-top: 80px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .section-num {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--orange), var(--orange-light));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(255,107,44,0.25);
+  }
+
+  .section h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.2px;
+  }
+
+  .section p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    font-weight: 300;
+  }
+
+  .section p:last-child { margin-bottom: 0; }
+
+  .list {
+    list-style: none;
+    margin: 10px 0 14px;
+  }
+
+  .list li {
+    font-size: 14px;
+    color: var(--muted);
+    padding: 6px 0 6px 20px;
+    position: relative;
+    font-weight: 300;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .list li:last-child { border-bottom: none; }
+
+  .list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+    background: var(--orange);
+    border-radius: 50%;
+  }
+
+  /* TABLE DROITS */
+  .rights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0;
+  }
+
+  @media (max-width: 500px) {
+    .rights-grid { grid-template-columns: 1fr; }
+  }
+
+  .right-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+  }
+
+  .right-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .right-card h4 {
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+
+  .right-card p {
+    font-size: 11.5px;
+    color: var(--light);
+    margin: 0;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .info-card {
+    background: rgba(255,107,44,0.05);
+    border: 1px solid rgba(255,107,44,0.15);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 14px 0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .info-card-icon {
+    width: 28px;
+    height: 28px;
+    background: rgba(255,107,44,0.12);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+    margin-top: 1px;
+  }
+
+  .info-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .info-card p strong { color: var(--orange); font-weight: 600; }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+  }
+
+  footer {
+    background: var(--dark);
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .footer-inner { max-width: 800px; margin: 0 auto; }
+
+  footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    font-weight: 300;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 12px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--orange); }
+  .footer-links a.active { color: var(--orange); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">🍽️</div>
+      <span class="logo-text">Nimba Eat</span>
+    </a>
+    <span class="header-badge">Légal</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">🔒 Document légal</div>
+    <h1>Politique de<br><span>Confidentialité</span></h1>
+    <p class="hero-meta">Version 1.0 · En vigueur depuis le 5 mai 2026</p>
+    <div class="hero-divider"></div>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="toc">
+    <div class="toc-title">Sommaire</div>
+    <ol>
+      <li><a href="#s1" data-num="1">Responsable du traitement</a></li>
+      <li><a href="#s2" data-num="2">Données collectées</a></li>
+      <li><a href="#s3" data-num="3">Finalités</a></li>
+      <li><a href="#s4" data-num="4">Base légale</a></li>
+      <li><a href="#s5" data-num="5">Partage des données</a></li>
+      <li><a href="#s6" data-num="6">Conservation</a></li>
+      <li><a href="#s7" data-num="7">Sécurité</a></li>
+      <li><a href="#s8" data-num="8">Vos droits</a></li>
+      <li><a href="#s9" data-num="9">Notifications push</a></li>
+      <li><a href="#s10" data-num="10">Modifications</a></li>
+      <li><a href="#s11" data-num="11">Contact</a></li>
+    </ol>
+  </div>
+
+  <p style="font-size:14px;color:var(--muted);margin-bottom:32px;font-weight:300;">Chez Nimba Eat, la protection de vos données personnelles est une priorité. Cette politique décrit quelles données nous collectons, pourquoi nous les collectons, comment nous les utilisons et quels sont vos droits.</p>
+
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Responsable du traitement</h2>
+    </div>
+    <p>Le responsable du traitement de vos données personnelles est <strong>Abdoulaye Bah</strong>, opérant sous la marque Nimba Eat, dont le siège est situé à Conakry, Guinée.</p>
+    <p>Pour toute question relative à vos données : <a href="mailto:nimbaeat@gmail.com" style="color:var(--orange);text-decoration:none;font-weight:500;">nimbaeat@gmail.com</a></p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Données collectées</h2>
+    </div>
+    <p><strong style="color:var(--text);font-weight:600;">Données d'identification et de contact :</strong></p>
+    <ul class="list">
+      <li>Nom complet</li>
+      <li>Adresse email</li>
+      <li>Numéro de téléphone</li>
+      <li>Adresse de livraison</li>
+    </ul>
+    <p style="margin-top:14px;"><strong style="color:var(--text);font-weight:600;">Données de commande :</strong></p>
+    <ul class="list">
+      <li>Historique des commandes passées</li>
+      <li>Restaurants et plats favoris</li>
+      <li>Modes de paiement utilisés</li>
+      <li>Codes de livraison générés</li>
+    </ul>
+    <p style="margin-top:14px;"><strong style="color:var(--text);font-weight:600;">Données techniques :</strong></p>
+    <ul class="list">
+      <li>Adresse IP et identifiant de l'appareil</li>
+      <li>Système d'exploitation et version de l'application</li>
+      <li>Données de navigation dans l'application</li>
+      <li>Tokens de notification push (FCM)</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>Finalités du traitement</h2>
+    </div>
+    <p>Vos données sont collectées et traitées pour les finalités suivantes :</p>
+    <ul class="list">
+      <li>Création et gestion de votre compte utilisateur</li>
+      <li>Traitement et suivi de vos commandes en temps réel</li>
+      <li>Coordination de la livraison avec nos livreurs partenaires</li>
+      <li>Communication relative à vos commandes (notifications, statuts)</li>
+      <li>Amélioration de nos services et de l'expérience utilisateur</li>
+      <li>Prévention de la fraude et sécurisation des transactions</li>
+      <li>Respect de nos obligations légales et réglementaires</li>
+      <li>Envoi de communications commerciales (avec votre consentement)</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>Base légale du traitement</h2>
+    </div>
+    <ul class="list">
+      <li><strong style="color:var(--text);">Exécution du contrat</strong> — traitement nécessaire à la fourniture de nos services de livraison</li>
+      <li><strong style="color:var(--text);">Consentement</strong> — pour l'envoi de communications commerciales et notifications marketing</li>
+      <li><strong style="color:var(--text);">Intérêt légitime</strong> — amélioration de nos services et prévention de la fraude</li>
+      <li><strong style="color:var(--text);">Obligation légale</strong> — respect des lois applicables en République de Guinée</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>Partage des données</h2>
+    </div>
+    <p>Vos données peuvent être partagées avec les tiers suivants dans le cadre de la fourniture de nos services :</p>
+    <ul class="list">
+      <li><strong style="color:var(--text);">Restaurants partenaires</strong> — nom, adresse et remarques de commande pour traiter votre commande</li>
+      <li><strong style="color:var(--text);">Livreurs partenaires</strong> — nom, téléphone et adresse de livraison pour effectuer la livraison</li>
+      <li><strong style="color:var(--text);">Firebase (Google)</strong> — infrastructure technique (authentification, base de données, notifications)</li>
+      <li><strong style="color:var(--text);">Prestataires de paiement</strong> — pour traiter vos paiements (données minimales nécessaires)</li>
+    </ul>
+    <div class="info-card">
+      <div class="info-card-icon">🔒</div>
+      <p><strong>Engagement :</strong> Nous ne vendons jamais vos données personnelles à des tiers à des fins commerciales.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2>Conservation des données</h2>
+    </div>
+    <ul class="list">
+      <li><strong style="color:var(--text);">Données de compte</strong> — durée de vie du compte + 3 ans après clôture</li>
+      <li><strong style="color:var(--text);">Données de commande</strong> — 5 ans à compter de la commande (obligations comptables)</li>
+      <li><strong style="color:var(--text);">Données techniques</strong> — 12 mois maximum</li>
+      <li><strong style="color:var(--text);">Données de consentement marketing</strong> — jusqu'au retrait du consentement</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s7">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2>Sécurité des données</h2>
+    </div>
+    <p>Nimba Eat met en œuvre des mesures techniques et organisationnelles appropriées :</p>
+    <ul class="list">
+      <li>Chiffrement des données en transit (HTTPS/TLS)</li>
+      <li>Chiffrement des données au repos (Firebase Security)</li>
+      <li>Accès aux données limité au personnel autorisé</li>
+      <li>Authentification sécurisée (Firebase Auth)</li>
+      <li>Surveillance des erreurs et crashs (Firebase Crashlytics)</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s8">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <h2>Vos droits</h2>
+    </div>
+    <p>Conformément aux lois applicables, vous disposez des droits suivants :</p>
+    <div class="rights-grid">
+      <div class="right-card">
+        <div class="right-icon">👁️</div>
+        <div>
+          <h4>Accès</h4>
+          <p>Obtenir une copie de vos données personnelles</p>
+        </div>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">✏️</div>
+        <div>
+          <h4>Rectification</h4>
+          <p>Corriger des données inexactes ou incomplètes</p>
+        </div>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">🗑️</div>
+        <div>
+          <h4>Effacement</h4>
+          <p>Demander la suppression de vos données</p>
+        </div>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">🚫</div>
+        <div>
+          <h4>Opposition</h4>
+          <p>Vous opposer au traitement de vos données</p>
+        </div>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">📦</div>
+        <div>
+          <h4>Portabilité</h4>
+          <p>Recevoir vos données dans un format structuré</p>
+        </div>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">↩️</div>
+        <div>
+          <h4>Retrait du consentement</h4>
+          <p>À tout moment pour les traitements basés sur le consentement</p>
+        </div>
+      </div>
+    </div>
+    <div class="info-card" style="margin-top:16px;">
+      <div class="info-card-icon">💡</div>
+      <p>Pour exercer vos droits, contactez-nous à <strong>nimbaeat@gmail.com</strong>. Vous pouvez également supprimer votre compte directement depuis l'application (Profil → Informations personnelles → Supprimer mon compte).</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s9">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <h2>Notifications push</h2>
+    </div>
+    <p>Avec votre consentement, nous vous envoyons des notifications push pour vous informer du statut de vos commandes, de l'assignation d'un livreur ou de promotions.</p>
+    <p>Vous pouvez désactiver ces notifications à tout moment depuis les paramètres de votre appareil ou depuis l'application (Profil → Notifications).</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s10">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <h2>Modifications de la politique</h2>
+    </div>
+    <p>Nimba Eat se réserve le droit de modifier la présente politique de confidentialité à tout moment. Toute modification substantielle vous sera notifiée via l'application ou par email.</p>
+    <p>L'utilisation continue de l'application après modification vaut acceptation de la nouvelle politique.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s11">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <h2>Contact</h2>
+    </div>
+    <p>Pour toute question, réclamation ou exercice de vos droits concernant vos données personnelles :</p>
+    <ul class="list">
+      <li>Email : <a href="mailto:nimbaeat@gmail.com" style="color:var(--orange);text-decoration:none;">nimbaeat@gmail.com</a></li>
+      <li>Via le support intégré dans l'application</li>
+      <li>Adresse : Conakry, République de Guinée</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="cgu.html">CGU</a>
+      <a href="privacy.html" class="active">Politique de confidentialité</a>
+      <a href="mailto:nimbaeat@gmail.com">Contact</a>
+    </div>
+    <p>© 2026 Nimba Eat · Tous droits réservés · Conakry, République de Guinée</p>
+  </div>
+</footer>
+
+</body>
+</html>

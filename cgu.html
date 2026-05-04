@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conditions Générales d'Utilisation — Nimba Eat</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #FF6B2C;
+    --orange-light: #FF8F5E;
+    --dark: #0C1018;
+    --surface: #F6F4F1;
+    --text: #17172E;
+    --muted: #575571;
+    --light: #9896B2;
+    --border: #ECEAE5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--surface);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--dark);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+    background: linear-gradient(135deg, var(--orange), var(--orange-light));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .logo-text {
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: white;
+    letter-spacing: -0.3px;
+  }
+
+  .header-badge {
+    font-family: 'Sora', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--dark);
+    padding: 48px 24px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(255,107,44,0.15), transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(255,107,44,0.08), transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,107,44,0.15);
+    border: 1px solid rgba(255,107,44,0.25);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-family: 'Sora', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--orange-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .hero h1 span {
+    color: var(--orange);
+  }
+
+  .hero-meta {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+
+  .hero-divider {
+    width: 40px;
+    height: 3px;
+    background: var(--orange);
+    border-radius: 2px;
+    margin-top: 20px;
+  }
+
+  /* CONTENT */
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* TOC */
+  .toc {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 12px rgba(23,23,46,0.06);
+  }
+
+  .toc-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--light);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .toc ol {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  @media (max-width: 500px) {
+    .toc ol { grid-template-columns: 1fr; }
+  }
+
+  .toc ol li a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+
+  .toc ol li a:hover { color: var(--orange); }
+
+  .toc ol li a::before {
+    content: attr(data-num);
+    width: 20px;
+    height: 20px;
+    background: var(--surface);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--orange);
+    flex-shrink: 0;
+  }
+
+  /* SECTIONS */
+  .section {
+    margin-bottom: 40px;
+    scroll-margin-top: 80px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .section-num {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--orange), var(--orange-light));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(255,107,44,0.25);
+  }
+
+  .section h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.2px;
+  }
+
+  .section p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    font-weight: 300;
+  }
+
+  .section p:last-child { margin-bottom: 0; }
+
+  /* LISTE */
+  .list {
+    list-style: none;
+    margin: 10px 0 14px;
+  }
+
+  .list li {
+    font-size: 14px;
+    color: var(--muted);
+    padding: 6px 0 6px 20px;
+    position: relative;
+    font-weight: 300;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .list li:last-child { border-bottom: none; }
+
+  .list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+    background: var(--orange);
+    border-radius: 50%;
+  }
+
+  /* CARD INFO */
+  .info-card {
+    background: rgba(255,107,44,0.05);
+    border: 1px solid rgba(255,107,44,0.15);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 14px 0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .info-card-icon {
+    width: 28px;
+    height: 28px;
+    background: rgba(255,107,44,0.12);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+    margin-top: 1px;
+  }
+
+  .info-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .info-card p strong {
+    color: var(--orange);
+    font-weight: 600;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .footer-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    font-weight: 300;
+  }
+
+  footer a {
+    color: var(--orange);
+    text-decoration: none;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 12px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--orange); }
+  .footer-links a.active { color: var(--orange); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">🍽️</div>
+      <span class="logo-text">Nimba Eat</span>
+    </a>
+    <span class="header-badge">Légal</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">📄 Document légal</div>
+    <h1>Conditions Générales<br><span>d'Utilisation</span></h1>
+    <p class="hero-meta">Version 1.0 · En vigueur depuis le 5 mai 2026</p>
+    <div class="hero-divider"></div>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="toc">
+    <div class="toc-title">Sommaire</div>
+    <ol>
+      <li><a href="#s1" data-num="1">Présentation</a></li>
+      <li><a href="#s2" data-num="2">Acceptation</a></li>
+      <li><a href="#s3" data-num="3">Création de compte</a></li>
+      <li><a href="#s4" data-num="4">Commandes & livraison</a></li>
+      <li><a href="#s5" data-num="5">Prix & paiement</a></li>
+      <li><a href="#s6" data-num="6">Annulation & remboursement</a></li>
+      <li><a href="#s7" data-num="7">Responsabilités</a></li>
+      <li><a href="#s8" data-num="8">Propriété intellectuelle</a></li>
+      <li><a href="#s9" data-num="9">Droit applicable</a></li>
+      <li><a href="#s10" data-num="10">Contact</a></li>
+    </ol>
+  </div>
+
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Présentation de Nimba Eat</h2>
+    </div>
+    <p>Nimba Eat est une application mobile de livraison de repas opérant en République de Guinée, permettant aux utilisateurs de commander des plats auprès de restaurants partenaires et de se faire livrer à domicile.</p>
+    <p>Nimba Eat est éditée par Abdoulaye Bah, dont le siège est situé à Conakry, Guinée. Pour toute question : <strong><a href="mailto:nimbaeat@gmail.com" style="color:var(--orange);text-decoration:none;">nimbaeat@gmail.com</a></strong></p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Acceptation des conditions</h2>
+    </div>
+    <p>L'utilisation de l'application Nimba Eat implique l'acceptation pleine et entière des présentes Conditions Générales d'Utilisation. L'utilisateur qui n'accepte pas ces conditions ne doit pas utiliser l'application.</p>
+    <p>Nimba Eat se réserve le droit de modifier les présentes conditions à tout moment. Les modifications entrent en vigueur dès leur publication dans l'application.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>Création de compte</h2>
+    </div>
+    <p>Pour accéder aux fonctionnalités complètes de Nimba Eat, l'utilisateur doit créer un compte en fournissant des informations exactes et à jour :</p>
+    <ul class="list">
+      <li>Nom complet</li>
+      <li>Numéro de téléphone valide en Guinée (+224)</li>
+      <li>Adresse de livraison</li>
+      <li>Adresse email valide</li>
+      <li>Mot de passe sécurisé</li>
+    </ul>
+    <div class="info-card">
+      <div class="info-card-icon">💡</div>
+      <p>Il est également possible d'utiliser l'application en mode invité pour passer des commandes sans créer de compte. Dans ce cas, certaines fonctionnalités (historique, favoris, suivi) ne seront pas disponibles.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>Commandes et livraison</h2>
+    </div>
+    <p>En passant une commande sur Nimba Eat, l'utilisateur accepte les conditions suivantes :</p>
+    <ul class="list">
+      <li>Chaque commande constitue une offre d'achat ferme adressée au restaurant partenaire.</li>
+      <li>La commande n'est confirmée qu'après acceptation explicite par le restaurant partenaire.</li>
+      <li>Le restaurant partenaire peut refuser une commande sans obligation de motiver sa décision.</li>
+      <li>Les délais de livraison affichés sont indicatifs et peuvent varier selon les conditions de trafic.</li>
+      <li>La livraison est confirmée par un code à 2 chiffres que le livreur communique verbalement au client.</li>
+      <li>Nimba Eat se réserve le droit d'annuler une commande en cas de force majeure.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>Prix et paiement</h2>
+    </div>
+    <p>Les prix affichés sur l'application sont exprimés en Francs Guinéens (GNF) et incluent les taxes applicables. Des frais de livraison et de service peuvent s'appliquer selon le montant de la commande.</p>
+    <p>Les modes de paiement acceptés sont :</p>
+    <ul class="list">
+      <li>Paiement en espèces à la livraison</li>
+      <li>Orange Money (à venir)</li>
+      <li>Mobile Money — MTN, Cellcom (à venir)</li>
+      <li>Carte bancaire — Visa, Mastercard (à venir)</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2>Annulation et remboursement</h2>
+    </div>
+    <p>L'utilisateur peut annuler sa commande uniquement dans les <strong>5 minutes</strong> suivant sa validation, tant que le restaurant partenaire ne l'a pas encore acceptée.</p>
+    <p>En cas d'annulation valide ou de non-livraison imputable à Nimba Eat, le remboursement intégral est effectué selon le mode de paiement utilisé. Le remboursement est traité automatiquement sous 1 minute pour les paiements via wallet.</p>
+    <div class="info-card">
+      <div class="info-card-icon">⚠️</div>
+      <p><strong>Important :</strong> Une fois la commande acceptée et en cours de préparation, l'annulation n'est plus possible. Nimba Eat ne peut être tenu responsable des retards ou annulations imputables aux restaurants partenaires ou à des événements de force majeure.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s7">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2>Responsabilités</h2>
+    </div>
+    <p>Nimba Eat agit en qualité d'intermédiaire entre les utilisateurs et les restaurants partenaires. À ce titre :</p>
+    <ul class="list">
+      <li>Nimba Eat n'est pas responsable de la qualité des plats préparés par les restaurants partenaires.</li>
+      <li>Nimba Eat n'est pas responsable des allergènes présents dans les plats. L'utilisateur doit mentionner ses allergies lors de la commande.</li>
+      <li>Nimba Eat n'est pas responsable des dommages résultant d'une utilisation incorrecte de l'application.</li>
+      <li>La responsabilité de Nimba Eat est limitée au montant de la commande concernée.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s8">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <h2>Propriété intellectuelle</h2>
+    </div>
+    <p>L'application Nimba Eat, son contenu, son logo, sa charte graphique et toutes ses fonctionnalités sont la propriété exclusive de Nimba Eat et sont protégés par les lois applicables en matière de propriété intellectuelle.</p>
+    <p>Toute reproduction, modification ou utilisation non autorisée est strictement interdite.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s9">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <h2>Droit applicable et juridiction</h2>
+    </div>
+    <p>Les présentes conditions sont régies par le droit guinéen. Tout litige relatif à l'interprétation ou à l'exécution des présentes conditions sera soumis à la compétence exclusive des tribunaux de Conakry, Guinée.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="s10">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <h2>Contact</h2>
+    </div>
+    <p>Pour toute question relative aux présentes conditions, l'utilisateur peut contacter Nimba Eat :</p>
+    <ul class="list">
+      <li>Par email : <a href="mailto:nimbaeat@gmail.com" style="color:var(--orange);text-decoration:none;">nimbaeat@gmail.com</a></li>
+      <li>Via le support intégré dans l'application</li>
+      <li>Adresse : Conakry, République de Guinée</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="cgu.html" class="active">CGU</a>
+      <a href="privacy.html">Politique de confidentialité</a>
+      <a href="mailto:nimbaeat@gmail.com">Contact</a>
+    </div>
+    <p>© 2026 Nimba Eat · Tous droits réservés · Conakry, République de Guinée</p>
+  </div>
+</footer>
+
+</body>
+</html>
