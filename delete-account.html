@@ -275,6 +275,53 @@
     <div class="contact-card">
       <p>Vous ne pouvez pas accéder à l'application ? Contactez-nous directement à <a href="mailto:nimbaeat@gmail.com">nimbaeat@gmail.com</a> pour une suppression manuelle de votre compte sous 72h.</p>
     </div>
+
+    <div class="card" style="margin-top: 20px;">
+      <div class="card-title">
+        <div class="step-number" style="background: #4B5563; font-size: 15px;">✉</div>
+        Demander la suppression de vos données
+      </div>
+      <p style="font-size: 14px; color: var(--gray); line-height: 1.6; margin-bottom: 20px;">
+        Conformément à la réglementation sur la protection des données, vous pouvez demander la suppression de l'ensemble de vos données personnelles via le formulaire ci-dessous.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div>
+          <label style="font-size: 13px; font-weight: 600; display: block; margin-bottom: 6px;">Votre adresse email</label>
+          <input id="userEmail" type="email" placeholder="votre@email.com"
+            style="width: 100%; padding: 11px 14px; border: 1px solid var(--border); border-radius: 10px; font-size: 14px; font-family: 'DM Sans', sans-serif; outline: none; transition: border 0.2s;"
+            onfocus="this.style.borderColor='#F26522'" onblur="this.style.borderColor='#E5E7EB'" />
+        </div>
+        <div>
+          <label style="font-size: 13px; font-weight: 600; display: block; margin-bottom: 6px;">Précisez votre demande <span style="font-weight:400; color:var(--gray)">(optionnel)</span></label>
+          <textarea id="userMessage" placeholder="Ex : Je souhaite supprimer toutes mes données personnelles associées à ce compte." rows="3"
+            style="width: 100%; padding: 11px 14px; border: 1px solid var(--border); border-radius: 10px; font-size: 14px; font-family: 'DM Sans', sans-serif; resize: none; outline: none; transition: border 0.2s;"
+            onfocus="this.style.borderColor='#F26522'" onblur="this.style.borderColor='#E5E7EB'"></textarea>
+        </div>
+        <button onclick="sendDeletionRequest()"
+          style="background: var(--red); color: white; border: none; padding: 13px; border-radius: 10px; font-size: 14px; font-weight: 600; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: opacity 0.2s;"
+          onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          Envoyer la demande de suppression
+        </button>
+        <p id="confirmMsg" style="display:none; font-size: 13px; color: #065F46; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 8px; padding: 10px 14px; text-align: center;">
+          ✅ Votre demande a bien été envoyée. Nous la traiterons sous 72h.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function sendDeletionRequest() {
+        const email = document.getElementById('userEmail').value.trim();
+        const message = document.getElementById('userMessage').value.trim();
+        if (!email) { alert('Veuillez saisir votre adresse email.'); return; }
+        const subject = encodeURIComponent('Demande de suppression de données – Nimba Eat');
+        const body = encodeURIComponent(
+          'Bonjour,\n\nJe souhaite demander la suppression de toutes mes données personnelles associées au compte suivant :\n\nEmail : ' + email +
+          (message ? '\n\nPrécisions : ' + message : '') + '\n\nMerci.'
+        );
+        window.location.href = 'mailto:nimbaeat@gmail.com?subject=' + subject + '&body=' + body;
+        document.getElementById('confirmMsg').style.display = 'block';
+      }
+    </script>
   </main>
 
   <footer>
