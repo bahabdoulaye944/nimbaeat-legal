@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supprimer mon compte – Nimba Eat</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #F26522;
+      --orange-light: #FFF0E8;
+      --dark: #1A1A1A;
+      --gray: #6B7280;
+      --light: #F9FAFB;
+      --border: #E5E7EB;
+      --red: #DC2626;
+      --red-light: #FEF2F2;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--orange);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg { width: 22px; height: 22px; fill: white; }
+
+    .logo-text {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .logo-text span { color: var(--orange); }
+
+    main {
+      flex: 1;
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 48px 24px;
+      width: 100%;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--red-light);
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: var(--gray);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .step-number {
+      width: 28px;
+      height: 28px;
+      background: var(--orange);
+      color: white;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .steps { display: flex; flex-direction: column; gap: 12px; }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 14px;
+      background: var(--light);
+      border-radius: 10px;
+    }
+
+    .step-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .step p { font-size: 14px; line-height: 1.5; color: var(--dark); }
+    .step p strong { color: var(--dark); }
+
+    .warning-card {
+      background: var(--red-light);
+      border: 1px solid #FECACA;
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+
+    .warning-card .warning-title {
+      font-weight: 600;
+      color: var(--red);
+      font-size: 14px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .warning-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .warning-card ul li {
+      font-size: 13px;
+      color: #7F1D1D;
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .warning-card ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+    }
+
+    .contact-card {
+      background: var(--orange-light);
+      border: 1px solid #FDDCBF;
+      border-radius: 16px;
+      padding: 20px 24px;
+    }
+
+    .contact-card p { font-size: 14px; color: #92400E; line-height: 1.6; }
+    .contact-card a { color: var(--orange); font-weight: 600; text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: var(--gray);
+      border-top: 1px solid var(--border);
+      background: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 3a1 1 0 1 0 2 0V1a1 1 0 1 0-2 0v2zm4.657 1.757a1 1 0 0 0 0 1.414l1.414 1.415a1 1 0 1 0 1.415-1.415L17.07 4.757a1 1 0 0 0-1.413 0zM21 11h2a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2zM4 7.172L5.414 5.757A1 1 0 1 1 6.83 7.172L5.414 8.586A1 1 0 1 1 4 7.172zM1 11h2a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2zm3 9l1.414-1.414a1 1 0 1 1 1.414 1.414L5.414 21.414A1 1 0 1 1 4 20zm14 0a1 1 0 0 0 1.414 0l1.415-1.414a1 1 0 1 0-1.415-1.414L18 18.586A1 1 0 0 0 18 20zM12 6a6 6 0 1 0 0 12A6 6 0 0 0 12 6z"/>
+      </svg>
+    </div>
+    <div class="logo-text">Nimba<span>Eat</span></div>
+  </header>
+
+  <main>
+    <div class="badge">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+      Gestion du compte
+    </div>
+
+    <h1>Supprimer mon compte</h1>
+    <p class="subtitle">Vous pouvez supprimer votre compte Nimba Eat à tout moment, directement depuis l'application. Cette action est irréversible.</p>
+
+    <div class="card">
+      <div class="card-title">
+        <div class="step-number">→</div>
+        Suppression depuis l'application
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-dot"></div>
+          <p>Ouvrez l'application <strong>Nimba Eat</strong> et connectez-vous à votre compte.</p>
+        </div>
+        <div class="step">
+          <div class="step-dot"></div>
+          <p>Accédez à <strong>Mon profil</strong> via l'icône en bas de l'écran.</p>
+        </div>
+        <div class="step">
+          <div class="step-dot"></div>
+          <p>Appuyez sur <strong>Informations personnelles</strong>.</p>
+        </div>
+        <div class="step">
+          <div class="step-dot"></div>
+          <p>Faites défiler jusqu'en bas et appuyez sur <strong>"Supprimer mon compte"</strong> dans la section Zone de danger.</p>
+        </div>
+        <div class="step">
+          <div class="step-dot"></div>
+          <p>Confirmez la suppression. Votre compte et vos données seront définitivement supprimés.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-card">
+      <div class="warning-title">
+        ⚠️ Données supprimées définitivement
+      </div>
+      <ul>
+        <li>Votre profil et informations personnelles</li>
+        <li>Votre historique de commandes</li>
+        <li>Vos adresses de livraison enregistrées</li>
+        <li>Votre accès à l'application</li>
+      </ul>
+    </div>
+
+    <div class="contact-card">
+      <p>Vous ne pouvez pas accéder à l'application ? Contactez-nous directement à <a href="mailto:nimbaeat@gmail.com">nimbaeat@gmail.com</a> pour une suppression manuelle de votre compte sous 72h.</p>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Nimba Eat – Tous droits réservés
+  </footer>
+
+</body>
+</html>
